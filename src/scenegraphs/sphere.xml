@@ -1,0 +1,48 @@
+<scene>
+    <instance name="sphere" path="models/sphere"></instance>
+    <instance name="box" path="models/box-outside"></instance>
+    <instance name="cylinder" path="models/cylinder"></instance>
+    <instance name="cone" path="models/cone"></instance>
+    <image name="output" path="textures/output.png"></image>
+    <image name="earthmap" path="textures/earthmap.png"></image>
+    <image name="mcdonald" path="textures/mcdonald.jpg"></image>
+    <transform>
+        <set>
+            <translate>0 0 0</translate>
+            <scale>100 100 100</scale>
+        </set>
+        <light>
+            <ambient>0.1 0.5 0.5</ambient>
+            <direction>0 -1 0</direction>
+        </light>
+        <light>
+            <ambient>0.1 0.5 0.5</ambient>
+            <direction>0 1 0</direction>
+        </light>
+        <light>
+            <ambient>0.1 0.5 0.5</ambient>
+            <direction>1 0 0</direction>
+        </light>
+        <light>
+            <ambient>0.1 0.5 0.5</ambient>
+            <direction>-1 0 0</direction>
+        </light>
+        <light>
+            <ambient>0.1 0.5 0.5</ambient>
+            <direction>0 0 1</direction>
+        </light>
+        <light>
+            <ambient>0.1 0.5 0.5</ambient>
+            <direction>0 0 -1</direction>
+        </light>
+
+        <object instanceof="sphere"  texture="earthmap">
+            <material>
+                <ambient>0.5 0.5 0.5</ambient>
+                <diffuse>0.5 0.5 0.5</diffuse>
+                <specular>1 1 1</specular>
+                <shininess>100</shininess>
+            </material>
+        </object>
+    </transform>
+</scene>

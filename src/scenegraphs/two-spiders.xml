@@ -1,0 +1,216 @@
+<scene>
+    <instance name="box" path="models/box"></instance>
+    <instance name="box-outside" path="models/box-outside"></instance>
+    <instance name="cylinder" path="models/cylinder"></instance>
+    <instance name="sphere" path="models/sphere"></instance>
+    <image name="checkerboard-box" path="textures/checkerboard-box.png"></image>
+    <image name="mcdonald" path="textures/mcdonald.jpg"></image>
+    <image name="earthmap" path="textures/earthmap.png"></image>
+    <image name="dice" path="textures/output.png"></image>
+    <image name="white-texture" path="textures/whiteTexture.png"></image>
+    <group>
+        <light>
+            <ambient>0.8 0.8 0.8</ambient>
+            <diffuse>0.8 0.8 0.8</diffuse>
+            <specular>0.8 0.8 0.8</specular>
+            <position>50 600 0</position>
+            <spotangle>30</spotangle>
+            <spotdirection>0 -1 0</spotdirection>
+        </light>
+        <light>
+            <ambient>0.1 0.5 0.5</ambient>
+            <direction>0 -1 0</direction>
+        </light>
+        <transform name="dice">
+            <set>
+                <translate>200 300 0</translate>
+                <scale>40 40 40</scale>
+            </set>
+            <object instanceof="box-outside" texture="dice">
+                <material>
+                    <ambient>0.7 0.7 0.7</ambient>
+                    <diffuse>0.5 0.5 0.5</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>100</shininess>
+                </material>
+            </object>
+        </transform>
+        <transform name="moon">
+            <set>
+                <translate>0 300 0</translate>
+                <scale>40 40 40</scale>
+            </set>
+            <object instanceof="sphere" texture="earthmap">
+                <material>
+                    <ambient>0.7 0.7 0.7</ambient>
+                    <diffuse>0.5 0.5 0.5</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>100</shininess>
+                </material>
+            </object>
+        </transform>
+        <!--signalBox are used in case you lose your dirction-->
+        <transform name="signalBox1">
+            <set>
+                <translate>2000 0 2000</translate>
+                <scale>10 20000 10</scale>
+            </set>
+            <object instanceof="box">
+                <material>
+                    <ambient>0 0.5 0.5</ambient>
+                </material>
+            </object>
+        </transform>
+        <transform name="signalBox2">
+            <set>
+                <translate>2000 0 -2000</translate>
+                <scale>10 20000 10</scale>
+            </set>
+            <object instanceof="box">
+                <material>
+                    <ambient>0 0.5 0.5</ambient>
+                </material>
+            </object>
+        </transform>
+        <transform name="signalBox3">
+            <set>
+                <translate>-2000 0 -2000</translate>
+                <scale>10 20000 10</scale>
+            </set>
+            <object instanceof="box">
+                <material>
+                    <ambient>0 0.5 0.5</ambient>
+                </material>
+            </object>
+        </transform>
+        <transform name="signalBox4">
+            <set>
+                <translate>-2000 0 2000</translate>
+                <scale>10 20000 10</scale>
+            </set>
+            <object instanceof="box">
+                <material>
+                    <ambient>0 0.5 0.5</ambient>
+                </material>
+            </object>
+        </transform>
+        <transform name="cornerFlag1">
+            <set>
+                <translate>500 0 500</translate>
+                <scale>2 1000 2</scale>
+            </set>
+            <object instanceof="box">
+                <material>
+                    <ambient>1 0 1</ambient>
+                </material>
+            </object>
+        </transform>
+        <transform name="cornerFlag2">
+            <set>
+                <translate>-500 0 500</translate>
+                <scale>2 1000 2</scale>
+            </set>
+            <object instanceof="box">
+                <material>
+                    <ambient>1 1 0</ambient>
+                </material>
+            </object>
+        </transform>
+        <transform name="cornerFlag3">
+            <set>
+                <translate>-500 0 -500</translate>
+                <scale>2 1000 2</scale>
+            </set>
+            <object instanceof="box">
+                <material>
+                    <ambient>0 0 1</ambient>
+                </material>
+            </object>
+        </transform>
+        <transform name="cornerFlag4">
+            <set>
+                <translate>500 0 -500</translate>
+                <scale>2 1000 2</scale>
+            </set>
+            <object instanceof="box">
+                <material>
+                    <ambient>0 1 0</ambient>
+                </material>
+            </object>
+        </transform>
+        <transform name="plane">
+            <set>
+                <translate>0 -1 0</translate>
+                <scale>1000 2 1000</scale>
+            </set>
+            <object instanceof="box">
+                <material>
+                    <ambient>0.5 0.5 0.5</ambient>
+                    <diffuse>0.5 0.5 0.5</diffuse>
+                    <specular>1 1 1</specular>
+                    <shininess>100</shininess>
+                </material>
+            </object>
+        </transform>
+        <transform name="wall">
+            <set>
+                <translate>0 250 -502</translate>
+                <scale>1000 500 2</scale>
+                <rotate>90 0 0 1</rotate>
+            </set>
+            <object instanceof="box">
+                <material>
+                    <ambient>0.1 0.2 0.3</ambient>
+                    <diffuse>0.5 0.5 0.5</diffuse>s
+                    <specular>1 1 1</specular>
+                    <shininess>100</shininess>
+                </material>
+            </object>
+        </transform>
+        <transform name="x-positive-pointer">
+            <set>
+                <translate>50 0 0</translate>
+                <translate>0 200 0</translate>
+                <scale>100 2 2</scale>
+            </set>
+            <object instanceof="box">
+                <material>
+                    <ambient>1 0 0</ambient>
+                </material>
+            </object>
+        </transform>
+        <transform name="flag">
+            <set>
+                <scale>2 1000 2</scale>
+            </set>
+            <object instanceof="box">
+                <material>
+                    <ambient>1 0 0</ambient>
+                </material>
+            </object>
+        </transform>
+        <transform name="train-transform">
+            <set>
+                <translate>-500 141 0</translate>
+                <scale>200 200 200</scale>
+            </set>
+            <group name="train-root" from="scenegraphs/train.xml"></group>
+        </transform>
+        <transform name="spiderA-transform">
+            <set>
+                <translate>0 19 0</translate>
+                <scale>40 40 40</scale>
+            </set>
+            <group name="spiderA-root" from="scenegraphs/spider.xml">
+            </group>
+        </transform>
+        <transform name="spiderB-transform">
+            <set>
+                <translate>0 19 0</translate>
+                <scale>40 40 40</scale>
+            </set>
+            <group name="spiderB-root" from="scenegraphs/spider.xml">
+            </group>
+        </transform>
+    </group>
+</scene>
