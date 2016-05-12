@@ -177,14 +177,14 @@
                             <translate>300 -50 -50</translate>
                             <scale>10 65 65</scale>
                         </set>
-                        <light>
-                            <ambient>1 1 1</ambient>
-                            <diffuse>0.8 0.8 0.8</diffuse>
-                            <specular>0.8 0.8 0.8</specular>
-                            <position>0 0 0</position>
-                            <spotangle>30</spotangle>
-                            <spotdirection>1 0 0</spotdirection>
-                        </light>
+                        <!--<light>-->
+                            <!--<ambient>1 1 1</ambient>-->
+                            <!--<diffuse>0.8 0.8 0.8</diffuse>-->
+                            <!--<specular>0.8 0.8 0.8</specular>-->
+                            <!--<position>1.02 0 0</position>-->
+                            <!--<spotangle>30</spotangle>-->
+                            <!--<spotdirection>1 0 0</spotdirection>-->
+                        <!--</light>-->
                         <object instanceof="box">
                             <material>
                                 <ambient>0.8 0.8 0.8</ambient>

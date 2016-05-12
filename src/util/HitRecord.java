@@ -1,6 +1,8 @@
 package util;
 
 import org.joml.Vector4f;
+import sgraph.Nodes.INode;
+import sgraph.Nodes.LeafNode;
 
 /**
  Stores all the information that you will need to determine the closest object that was hit, and
@@ -20,6 +22,7 @@ public class HitRecord {
   private Vector4f normal = new Vector4f(0, 0, 0, 0);
   private util.Material material = new Material();
   private Vector4f texture = null;
+  private LeafNode intersectNode = null;
 
   public HitRecord() {
     // Keep isEmpty == true
@@ -29,13 +32,14 @@ public class HitRecord {
                    Vector4f intersectionPoint,
                    Vector4f normal,
                    Material material,
-                   Vector4f texture) {
+                   Vector4f texture, LeafNode intersectNode) {
     this.t = t;
     this.intersectionPoint = intersectionPoint;
     this.normal = normal;
     this.material = material;
     this.texture = texture;
     this.isEmpty = false;
+    this.intersectNode = intersectNode;
   }
 
   public float getT() {
@@ -58,17 +62,21 @@ public class HitRecord {
     return texture;
   }
 
+  public LeafNode getLeafNode() { return this.intersectNode; };
+
   public void changeHitRecord(HitRecord newHit) {
-    changeHitRecord(newHit.getT(), newHit.getIntersectionPoint(), newHit.getNormal(), newHit.getMaterial(), newHit.getTexture());
+    changeHitRecord(newHit.getT(), newHit.getIntersectionPoint(), newHit.getNormal(), newHit.getMaterial(), newHit.getTexture(), newHit.getLeafNode());
     isEmpty = false;
   }
 
-  private void changeHitRecord(float t, Vector4f intersectionPoint, Vector4f normal, Material material, Vector4f texture) {
+  private void changeHitRecord(float t, Vector4f intersectionPoint, Vector4f normal, Material material, Vector4f texture, LeafNode intersectNode) {
     setT(t);
     setIntersectionPoint(intersectionPoint);
     setNormal(normal);
     setMaterial(material);
     setTexture(texture);
+    setLeafNode(intersectNode);
+
   }
 
   private void setT(float t) {
@@ -90,6 +98,9 @@ public class HitRecord {
   private void setTexture(Vector4f texture) {
     this.texture = new Vector4f(texture);
   }
+
+  private void setLeafNode(LeafNode n) { intersectNode = n; }
+
 
   boolean isEmpty = true;
   public boolean isEmpty() {

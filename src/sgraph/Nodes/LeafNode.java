@@ -479,6 +479,6 @@ public class LeafNode extends AbstractNode {
             pointOfIntersection,
             normalized_normal_inView,
             material,
-            textureColor); // TODO add texture
+            textureColor, this); // TODO add texture
   }
 }

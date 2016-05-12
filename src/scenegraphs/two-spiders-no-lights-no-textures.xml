@@ -2,6 +2,7 @@
     <instance name="box" path="models/box"></instance>
     <instance name="cylinder" path="models/cylinder"></instance>
     <image name="white-texture" path="textures/whiteTexture.png"></image>
+    <image name="checker" pather="textures/checkerboard.png"></image>
     <group>
         <light>
             <ambient>1 1 1</ambient>
@@ -96,7 +97,7 @@
                 </material>
             </object>
         </transform>
-        <transform name="plane">
+        <transform name="plane" texture="">
             <set>
                 <translate>0 -1 0</translate>
                 <scale>1000 2 1000</scale>

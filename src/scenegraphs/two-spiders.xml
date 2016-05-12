@@ -13,17 +13,25 @@
             <ambient>0.8 0.8 0.8</ambient>
             <diffuse>0.8 0.8 0.8</diffuse>
             <specular>0.8 0.8 0.8</specular>
-            <position>50 600 0</position>
+            <position>50 600 -10</position>
             <spotangle>30</spotangle>
-            <spotdirection>0 -1 0</spotdirection>
+            <spotdirection>0 -1 0.1</spotdirection>
         </light>
-        <light>
-            <ambient>0.1 0.5 0.5</ambient>
-            <direction>0 -1 0</direction>
-        </light>
+        <!--<light>-->
+            <!--<ambient>0.5 0.5 0.5</ambient>-->
+            <!--<diffuse>0.5 0.5 0.5</diffuse>-->
+            <!--<specular>0.5 0.5 0.5</specular>-->
+            <!--<position>400 300 400</position>-->
+            <!--<spotangle>30</spotangle>-->
+            <!--<spotdirection>-0.5 0 -0.7</spotdirection>-->
+        <!--</light>-->
+        <!--<light>-->
+            <!--<ambient>0.1 0.5 0.5</ambient>-->
+            <!--<direction>0 -1 0</direction>-->
+        <!--</light>-->
         <transform name="dice">
             <set>
-                <translate>200 300 0</translate>
+                <translate>200 300 30</translate>
                 <scale>40 40 40</scale>
             </set>
             <object instanceof="box-outside" texture="dice">
@@ -164,6 +172,9 @@
                     <diffuse>0.5 0.5 0.5</diffuse>s
                     <specular>1 1 1</specular>
                     <shininess>100</shininess>
+                    <reflection>0.8</reflection>
+                    <transparency>0</transparency>
+                    <absorption>0.2</absorption>
                 </material>
             </object>
         </transform>
@@ -198,8 +209,9 @@
         </transform>
         <transform name="spiderA-transform">
             <set>
-                <translate>0 19 0</translate>
+                <translate>0 19 300</translate>
                 <scale>40 40 40</scale>
+                <rotate>-30 0 1 0</rotate>
             </set>
             <group name="spiderA-root" from="scenegraphs/spider.xml">
             </group>

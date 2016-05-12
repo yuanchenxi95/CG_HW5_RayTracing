@@ -1,40 +1,38 @@
 <scene>
     <instance name="sphere" path="models/sphere"></instance>
     <instance name="box-outside" path="models/box-outside"></instance>
+    <instance name="box" path="models/box"></instance>
     <instance name="cylinder" path="models/cylinder"></instance>
     <instance name="cone" path="models/cone"></instance>
     <image name="checkerboard-box" path="textures/output.png"></image>
     <image name="mcdonald" path="textures/mcdonald.jpg"></image>
+    <image name="white-texture" path="textures/whiteTexture.png"></image>
+    <!--<light>-->
+        <!--<ambient>1 1 1</ambient>-->
+        <!--<direction>0 -1 0.5</direction>-->
+    <!--</light>-->
+    <light>
+        <ambient>0.8 0.8 0.8</ambient>
+        <diffuse>0.8 0.8 0.8</diffuse>
+        <specular>0.8 0.8 0.8</specular>
+        <position>200 900 200</position>
+        <spotangle>30</spotangle>
+        <spotdirection>0 -1 0</spotdirection>
+    </light>
+    <light>
+        <ambient>0.8 0.8 0.8</ambient>
+        <diffuse>0.8 0.8 0.8</diffuse>
+        <specular>0.8 0.8 0.8</specular>
+        <position>0 100 0</position>
+        <spotangle>30</spotangle>
+        <spotdirection>0 1 0</spotdirection>
+    </light>
+    <group>
     <transform>
         <set>
-            <translate>0 0 0</translate>
+            <translate>0 300 0</translate>
             <scale>100 100 100</scale>
         </set>
-        <light>
-            <ambient>0.1 0.5 0.5</ambient>
-            <direction>0 -1 0</direction>
-        </light>
-        <light>
-            <ambient>0.1 0.5 0.5</ambient>
-            <direction>0 1 0</direction>
-        </light>
-        <light>
-            <ambient>0.1 0.5 0.5</ambient>
-            <direction>1 0 0</direction>
-        </light>
-        <light>
-            <ambient>0.1 0.5 0.5</ambient>
-            <direction>-1 0 0</direction>
-        </light>
-        <light>
-            <ambient>0.1 0.5 0.5</ambient>
-            <direction>0 0 1</direction>
-        </light>
-        <light>
-            <ambient>0.1 0.5 0.5</ambient>
-            <direction>0 0 -1</direction>
-        </light>
-
         <object instanceof="box-outside"  texture="checkerboard-box">
             <material>
                 <ambient>0.5 0.5 0.5</ambient>
@@ -44,4 +42,22 @@
             </material>
         </object>
     </transform>
+    <transform name="plane">
+        <set>
+            <translate>0 -1 0</translate>
+            <scale>1000 2 1000</scale>
+        </set>
+        <object instanceof="box">
+            <material>
+                <ambient>0.3 0.3 0.3</ambient>
+                <diffuse>0.5 0.5 0.5</diffuse>
+                <specular>1 1 1</specular>
+                <shininess>100</shininess>
+                <reflection>0.3</reflection>
+                <transparency>0.3</transparency>
+                <absorption>0.4</absorption>
+            </material>
+        </object>
+    </transform>
+    </group>
 </scene>
